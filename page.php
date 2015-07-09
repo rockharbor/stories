@@ -10,6 +10,8 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 
 <?php if ( has_post_thumbnail() ) { ?>
 	<div class="w-section pageheader" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-ix="scroll-hides-nav"></div>
+<?php } else { ?>
+	<div class="clearmenu"></div>
 <?php } ?>
 
 	<div class="defaultcontent">

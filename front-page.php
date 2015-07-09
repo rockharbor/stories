@@ -12,31 +12,45 @@ get_header();  ?>
 
 <!-- display the STICKY post -->
 <?php
-$args = array(
-   'post__in' => get_option('sticky_posts'),
-	'caller_get_posts' => 1
-);
-$my_query = new WP_Query($args) ; ?>
-<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
-
-  <div class="w-section header" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>">
+// display one sticky post (or nothing if there are none)
+$stickyPosts = get_option( 'sticky_posts' );
+if ( isset( $stickyPosts[0] ) ) {
+    $args = array(
+        'post_per_page' => 1,
+        'post__in' => $stickyPosts,
+        'post_status' => 'publish',
+        'ignore_sticky_posts' => 1
+    );
+    $stickyQuery = new WP_Query( $args );
+    if ( $stickyQuery->have_posts() ) {
+        $stickyQuery->the_post(); ?>
+<div class="w-section header" style="<?php include ( TEMPLATEPATH . '/includes/background.php' ); ?>">
     <div class="w-container hero">
-	    <img class="icon" src="<?php bloginfo('template_directory'); ?>/images/video-outline.svg" width="24">
-		<span class="category"><?php the_category(' '); ?></span>
-		<a class="w-inline-block header-link" href="<?php the_permalink(); ?>"><h1><?php the_title(); ?></h1></a>
-      <div class="w-clearfix">
-        <div class="date">
-          <div class="month"><?php the_time('M'); ?></div>
-          <div class="day"><?php the_time('d'); ?></div>
-          <div class="year"><?php the_time('Y'); ?></div>
+        <img class="icon" src="<?php bloginfo( 'template_directory' ); ?>/images/video-outline.svg" width="24">
+        <span class="category"><?php the_category( ' ' ); ?></span>
+        <a class="w-inline-block header-link" href="<?php the_permalink(); ?>"><h1><?php the_title(); ?></h1></a>
+        <div class="w-clearfix">
+            <div class="date">
+                <div class="month"><?php the_time( 'M' ); ?></div>
+                <div class="day"><?php the_time( 'd' ); ?></div>
+                <div class="year"><?php the_time( 'Y' ); ?></div>
+            </div>
+            <p class="hero-p"><?php the_excerpt(); ?></p>
+            <?php the_tags( '', ', ', ' ' ); ?>
         </div>
-        <p class="hero-p"><?php the_excerpt(); ?></p>
-        <?php the_tags( '', ', ', ' ' ); ?>
-      </div>
     </div>
-  </div>
+</div>
+<?php
+    }
+}
 
-<?php endwhile; // OK, let's stop the posts loop once we've exhausted our query/number of posts ?>
+$args = array(
+    'posts_per_page' => 15,
+    'paged' => 1,
+    'post__not_in' => $stickyPosts,
+    'post_status' => 'publish'
+);
+$my_query = new WP_Query( $args ); ?>
 
 <div class="w-row">
 <!-- 	display posts 1 thru 3 -->

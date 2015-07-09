@@ -347,7 +347,7 @@ a:focus {
 .quote-txt {
   padding-top: 19px;
   padding-bottom: 19px;
-  
+
   font-size: 18px;
   font-style: normal;
   font-weight: 300;
@@ -401,7 +401,7 @@ a:focus {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: scroll;
-  
+
 }
 .post-leftcol.post-right {
   left: auto;
@@ -436,7 +436,7 @@ a:focus {
   color: #454545;
   font-size: 18px;
   font-weight: 200;
-  
+
 }
 .post-rightcol.post-left {
   left: 0px;
@@ -618,13 +618,17 @@ a:focus {
 .pageheader {
   overflow-x: hidden;
   overflow-y: hidden;
-  height: 700px;
+  height: 550px;
   margin-top: 60px;
-  background-image: url('../images/Becks-Bob.jpg');
+  /*background-image: url('../images/Becks-Bob.jpg');*/
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+.clearmenu {
+  height: 140px;
+  display: block;
 }
 .list {
   margin-bottom: 40px;
@@ -651,7 +655,7 @@ a:focus {
   background-color: #f90;
   text-transform: uppercase;
   font-size: 12px;
-  
+
 }
 .copyright {
   display: block;
@@ -665,7 +669,7 @@ a:focus {
   text-align: center;
 }
 .archivepage {
-  margin-top: 60px;
+  margin-top: 120px;
 }
 html.w-mod-js *[data-ix="mouse-over-title-origin"] {
   -webkit-transform: translate(0px, 200px);
