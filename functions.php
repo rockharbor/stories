@@ -16,11 +16,12 @@ add_filter('the_tags','add_class_the_tags');
 
 //Post thumbnails support
 add_theme_support( 'post-thumbnails' );
-add_image_size( 'single-post-thumbnail', 1280, 720 );
-the_post_thumbnail( 'thumbnail' );       // Thumbnail (default 150px x 150px max)
-the_post_thumbnail( 'medium' );          // Medium resolution (default 300px x 300px max)
-the_post_thumbnail( 'large', 1280, 720  );           // Large resolution (default 640px x 640px max)
-the_post_thumbnail( 'full' );            // Full resolution (original size uploaded)
+add_image_size( 'single-post-thumbnail', 2000, 1125 ); 	// Increased the default size of the thumbnail slightly for larger browsers.
+the_post_thumbnail( 'full', 0, 0  );            		// DISABLED Full resolution (original size uploaded)
+the_post_thumbnail( 'thumbnail', 0, 0 );       			// DISABLED Thumbnail (default 150px x 150px max)
+the_post_thumbnail( 'medium', 0, 0  );          		// DISABLED Medium resolution (default 300px x 300px max)
+the_post_thumbnail( 'large', 0, 0 );           			// DISABLED Large resolution (default 640px x 640px max)
+
 
 
 // Next and previous post links class
