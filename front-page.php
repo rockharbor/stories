@@ -31,7 +31,7 @@ $my_query = new WP_Query($args) ; ?>
           <div class="year"><?php the_time('Y'); ?></div>
         </div>
         <p class="hero-p"><?php the_excerpt(); ?></p>
-        <?php the_tags( '', ', ', ' ' ); ?>
+        <?php the_tags( '', ' ', ' ' ); ?>
       </div>
     </div>
   </div>
