@@ -1,0 +1,37 @@
+{
+  "key":"group_556f7a365f69c",
+  "title":"Quote\/Status Post",
+  "fields":[
+    
+  ],
+  "location":[
+    [
+      {
+        "param":"post_format",
+        "operator":"==",
+        "value":"quote"
+      }
+    ]
+  ],
+  "menu_order":0,
+  "position":"normal",
+  "style":"default",
+  "label_placement":"top",
+  "instruction_placement":"label",
+  "hide_on_screen":[
+    "the_content",
+    "excerpt",
+    "custom_fields",
+    "discussion",
+    "comments",
+    "revisions",
+    "author",
+    "format",
+    "page_attributes",
+    "featured_image",
+    "categories",
+    "tags",
+    "send-trackbacks"
+  ],
+  "modified":1436370327
+}
