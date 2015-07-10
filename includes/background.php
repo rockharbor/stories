@@ -4,15 +4,11 @@
 	  background-position: 0% 0%, 50% 50%;
 	  background-size: auto, cover;
 	  background-repeat: repeat, no-repeat;
+	  color: white;
 	<?php if ( has_post_format( 'video' )) { ?>
 	<?php } elseif ( has_post_format( 'audio' )) { ?>
 	<?php } elseif ( has_post_format( 'quote' )) { ?>
-	
 		background-color: <?php the_sub_field('background_color'); ?>;
-			
 	<?php } else { ?>
 	
-	<?php } ?>  
-	
-	  color: white;
-	  
+	<?php } ?>
