@@ -1,4 +1,4 @@
   <div class="w-section w-clearfix older-newer-posts">  		
-  		<?php previous_posts_link( 'Newer posts' ); ?>
-	  	<?php next_posts_link( 'Older posts' ); ?>
+  		<?php previous_posts_link( 'Newer Posts' ); ?>
+	  	<?php next_posts_link( 'More Posts' ); ?>
   </div>
