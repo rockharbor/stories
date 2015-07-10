@@ -10,7 +10,7 @@
 		      	<a class="button" href="<?php the_field('left_button_link', 'option'); ?>"><?php the_field('left_button_title', 'option'); ?></a>
 	      </div>
 	      <div class="w-col w-col-4 w-col-stack">
-		      	<a class="button" href="<?php the_field('left_button_link', 'option'); ?>"><?php the_field('right_button_title', 'option'); ?></a>
+		      	<a class="button" href="<?php the_field('right_button_link', 'option'); ?>"><?php the_field('right_button_title', 'option'); ?></a>
 	      </div>
 	      <div class="w-col w-col-4 w-col-stack">
 		  		<?php include (TEMPLATEPATH . '/searchform.php' ); //This includes the Search Form ?>
