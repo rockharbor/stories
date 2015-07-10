@@ -173,7 +173,7 @@ $my_query = new WP_Query( $args ); ?>
 	<?php $posts = get_posts('numberposts=1&offset=12'); foreach ($posts as $post) : start_wp(); ?>
 	<?php static $count7 = 0; if ($count7 == "1") { break; } else { ?>
 
-	    <div class="w-col w-col-6 home-portrait" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-ix="mouse-over-titles">
+	    <div class="w-col w-col-8 home-portrait" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-ix="mouse-over-titles">
 	      <?php include (TEMPLATEPATH . '/includes/titleblock.php' ); ?>
 	    </div>
 
