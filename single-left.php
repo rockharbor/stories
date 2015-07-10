@@ -25,7 +25,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 
 
 
-  <div class="w-hidden-medium w-hidden-small w-hidden-tiny post-leftcol" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>background-position: 0% 0%, 35% 50%;">
+  <div class="w-hidden-medium w-hidden-small w-hidden-tiny post-leftcol" <?php if ( has_post_thumbnail() ) { ?>style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>background-position: 0% 0%, 35% 50%;"<?php } ?>>
   		<?php include (TEMPLATEPATH . '/includes/titleblock.php' ); ?>
   </div>
   <div class="w-clearfix post-rightcol post-content" data-ix="scroll-hides-nav">
