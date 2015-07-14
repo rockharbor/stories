@@ -37,7 +37,7 @@
 
 <div class="home-quoteblock">
 	<div class="quote">“</div>
-	<div class="quote-txt"><?php the_excerpt(); ?></div><a href="<?php the_field('social_media_handle'); ?>"></a>
+	<div class="quote-txt"><?php the_field( 'quote' ); ?></div><a href="<?php the_field( 'social_media_user_link' ); ?>"><?php the_field( 'social_media_handle' ); ?></a>
 </div>
 
 
