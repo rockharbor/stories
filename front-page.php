@@ -26,10 +26,21 @@ if ( isset( $stickyPosts[0] ) && !( $page >= 2 ) ) { // If there is at least one
     );
     $stickyQuery = new WP_Query( $args );
     if ( $stickyQuery->have_posts() ) {
-        $stickyQuery->the_post(); ?>
+        $stickyQuery->the_post();
+        $postFormat = get_post_format();
+        switch ( $postFormat ) {
+            case 'video':
+                $iconUrl = '/includes/video-outline.svg';
+                break;
+            case 'audio':
+                $iconUrl = '/includes/microphone-outline.svg';
+                break;
+            default:
+                $iconUrl = '/images/clipboard.svg';
+        } ?>
 <div class="w-section header" style="<?php include ( TEMPLATEPATH . '/includes/background.php' ); ?>">
     <div class="w-container hero">
-        <img class="icon" src="<?php bloginfo( 'template_directory' ); ?>/images/video-outline.svg" width="24">
+        <img class="icon" src="<?php echo get_bloginfo( 'template_directory' ) . $iconUrl; ?>" width="24">
         <span class="category"><?php the_category( ' ' ); ?></span>
         <a class="w-inline-block header-link" href="<?php the_permalink(); ?>"><h1><?php the_title(); ?></h1></a>
         <div class="w-clearfix">
