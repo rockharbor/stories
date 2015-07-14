@@ -12,9 +12,12 @@ get_header();  ?>
 
 <!-- display the STICKY post -->
 <?php
-// display one sticky post (or nothing if there are none)
+/* Displays one sticky post on the first page of results (first one DB query returns)
+ * If no sticky is set, or if on other page, display nothing.
+*/
+$page = get_query_var( 'page', null );
 $stickyPosts = get_option( 'sticky_posts' );
-if ( isset( $stickyPosts[0] ) ) {
+if ( isset( $stickyPosts[0] ) && !( $page >= 2 ) ) { // If there is at least one sticky post and we're on the first page of results, display the FIRST sticky post in the hero position
     $args = array(
         'post_per_page' => 1,
         'post__in' => $stickyPosts,
@@ -44,124 +47,111 @@ if ( isset( $stickyPosts[0] ) ) {
     }
 }
 
-$args = array(
-    'posts_per_page' => 15,
-    'paged' => 1,
+$args = array( // 14 posts per page, don't duplicate sticky posts, and only show published posts
+    'posts_per_page' => 14,
     'post__not_in' => $stickyPosts,
     'post_status' => 'publish'
 );
-$my_query = new WP_Query( $args ); ?>
+if ( ! is_null( $page ) ) { // if we are on a page, only retrieve those posts
+    $args['paged'] = $page;
+}
+$my_query = new WP_Query( $args );
+$postsRemaining = $my_query->post_count; ?>
 
 <div class="w-row">
 <!-- 	display posts 1 thru 3 -->
-	<?php query_posts('showposts=3'); ?>
-	<?php $posts = get_posts('numberposts=3&offset=0'); foreach ($posts as $post) : start_wp(); ?>
-	<?php static $count2 = 0; if ($count2 == "3") { break; } else { ?>
+	<?php for ( $i = 0; ( $i < 3 ) && ( $postsRemaining > 0 ); $i++ ) {
+        $my_query->the_post(); ?>
 
 	    <div class="w-col w-col-4 w-col-stack home-portrait" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-ix="mouse-over-titles">
 	        <?php include (TEMPLATEPATH . '/includes/titleblock.php' ); ?>
 	    </div>
 
-	<?php $count2++; } ?>
-	<?php endforeach; ?>
+	<?php $postsRemaining--; } // end for ?>
 </div>
 
 <div class="w-row">
 <!--  display post 4 -->
-	<?php query_posts('showposts=1'); ?>
-	<?php $posts = get_posts('numberposts=1&offset=3'); foreach ($posts as $post) : start_wp(); ?>
-	<?php static $count3 = 0; if ($count3 == "1") { break; } else { ?>
+	<?php if ( $postsRemaining > 0 ) {
+        $my_query->the_post(); ?>
 
 	    <div class="w-col w-col-4 home-portrait" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-ix="mouse-over-titles">
 		   <?php include (TEMPLATEPATH . '/includes/titleblock.php' ); ?>
 	    </div>
 
-	<?php $count3++; } ?>
-	<?php endforeach; ?>
+	<?php $postsRemaining--; } // end if ?>
 
 
 <!-- 	 display post 5 -->
-	<?php query_posts('showposts=1'); ?>
-	<?php $posts = get_posts('numberposts=1&offset=4'); foreach ($posts as $post) : start_wp(); ?>
-	<?php static $count31 = 0; if ($count31 == "1") { break; } else { ?>
+	<?php if ( $postsRemaining > 0 ) {
+        $my_query->the_post(); ?>
 
 	    <div class="w-col w-col-8 home-portrait" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-ix="mouse-over-titles">
 	      <?php include (TEMPLATEPATH . '/includes/titleblock.php' ); ?>
 	    </div>
 
-	<?php $count31++; } ?>
-	<?php endforeach; ?>
+	<?php $postsRemaining--; } // end if ?>
 </div>
 
 
 <div class="w-row">
 <!-- 	display posts 6-8 -->
-	<?php query_posts('showposts=3'); ?>
-	<?php $posts = get_posts('numberposts=3&offset=5'); foreach ($posts as $post) : start_wp(); ?>
-	<?php static $count4 = 0; if ($count4 == "3") { break; } else { ?>
+	<?php for ( $i = 0; ( $i < 3 ) && ( $postsRemaining > 0 ); $i++ ) {
+        $my_query->the_post(); ?>
 
 	    <div class="w-col w-col-4 w-col-stack home-portrait" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-ix="mouse-over-titles">
 	      <?php include (TEMPLATEPATH . '/includes/titleblock.php' ); ?>
 	    </div>
 
-	<?php $count4++; } ?>
-	<?php endforeach; ?>
+	<?php $postsRemaining--; } // end for ?>
 
 </div>
 
 <div class="w-row">
 <!-- 	display post 9 -->
-	<?php query_posts('showposts=1'); ?>
-	<?php $posts = get_posts('numberposts=1&offset=8'); foreach ($posts as $post) : start_wp(); ?>
-	<?php static $count5 = 0; if ($count5 == "1") { break; } else { ?>
+	<?php if ( $postsRemaining > 0 ) {
+        $my_query->the_post(); ?>
 
 	    <div class="w-col w-col-8 home-portrait" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-ix="mouse-over-titles">
 	      <?php include (TEMPLATEPATH . '/includes/titleblock.php' ); ?>
 	    </div>
 
-	<?php $count5++; } ?>
-	<?php endforeach; ?>
+	<?php $postsRemaining--; } // end if ?>
 
 
 <!-- 	display post 10 -->
-	<?php query_posts('showposts=1'); ?>
-	<?php $posts = get_posts('numberposts=1&offset=9'); foreach ($posts as $post) : start_wp(); ?>
-	<?php static $count51 = 0; if ($count51 == "1") { break; } else { ?>
+	<?php if ( $postsRemaining > 0) {
+        $my_query->the_post(); ?>
 
 	    <div class="w-col w-col-4 home-portrait" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-ix="mouse-over-titles">
 	      <?php include (TEMPLATEPATH . '/includes/titleblock.php' ); ?>
 	    </div>
 
-	<?php $count51++; } ?>
-	<?php endforeach; ?>
+	<?php $postsRemaining--; } //end if ?>
 </div>
 
 
 <div class="w-row">
 <!-- 	display post 11 -->
-	<?php query_posts('showposts=1'); ?>
-	<?php $posts = get_posts('numberposts=1&offset=10'); foreach ($posts as $post) : start_wp(); ?>
-	<?php static $count6 = 0; if ($count6 == "1") { break; } else { ?>
+	<?php if ( $postsRemaining > 0 ) {
+        $my_query->the_post(); ?>
 
 	    <div class="w-col w-col-4 home-portrait" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-ix="mouse-over-titles">
 	      <?php include (TEMPLATEPATH . '/includes/titleblock.php' ); ?>
 	    </div>
 
-	<?php $count6++; } ?>
-	<?php endforeach; ?>
+	<?php $postsRemaining--; } // end if ?>
 
 
 <!-- 	display post 12 -->
-	<?php query_posts('showposts=1'); ?>
-	<?php $posts = get_posts('numberposts=1&offset=11'); foreach ($posts as $post) : start_wp(); ?>
-	<?php static $count61 = 0; if ($count61 == "1") { break; } else { ?>
+	<?php if ( $postsRemaining > 0 ) {
+        $my_query->the_post(); ?>
 
 	    <div class="w-col w-col-8 home-portrait" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-ix="mouse-over-titles">
 	        <?php include (TEMPLATEPATH . '/includes/titleblock.php' ); ?>
 	    </div>
 
-	<?php $count61++; } ?>
-	<?php endforeach; ?>
+	<?php $postsRemaining--; } // end if ?>
 
 </div>
 
@@ -169,31 +159,47 @@ $my_query = new WP_Query( $args ); ?>
 <div class="w-row">
 
 <!-- 	display post 13 -->
-	<?php query_posts('showposts=1'); ?>
-	<?php $posts = get_posts('numberposts=1&offset=12'); foreach ($posts as $post) : start_wp(); ?>
-	<?php static $count7 = 0; if ($count7 == "1") { break; } else { ?>
+	<?php if ( $postsRemaining > 0 ) {
+        $my_query->the_post(); ?>
 
 	    <div class="w-col w-col-8 home-portrait" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-ix="mouse-over-titles">
 	      <?php include (TEMPLATEPATH . '/includes/titleblock.php' ); ?>
 	    </div>
 
-	<?php $count7++; } ?>
-	<?php endforeach; ?>
+	<?php $postsRemaining--; } // end if ?>
 
 
 
 <!-- 	display post 14 -->
-	<?php query_posts('showposts=1'); ?>
-	<?php $posts = get_posts('numberposts=1&offset=13'); foreach ($posts as $post) : start_wp(); ?>
-	<?php static $count71 = 0; if ($count71 == "1") { break; } else { ?>
+	<?php if ( $postsRemaining > 0 ) {
+        $my_query->the_post(); ?>
 
 	    <div class="w-col w-col-4 home-portrait" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-ix="mouse-over-titles">
 	      <?php include (TEMPLATEPATH . '/includes/titleblock.php' ); ?>
 	    </div>
 
-	<?php $count71++; } ?>
-	<?php endforeach; ?>
-
+	<?php $postsRemaining--; } // end if
+$nextPage = $prevPage = null; // default no pagination links
+$page = get_query_var( 'page', null );
+switch ( $page ) {
+    case null: // we're on the home page
+        $nextPage = 2; // next page 2, no previous page
+        break;
+    default: // we're on some other page
+        $nextPage = ( $page < $my_query->max_num_pages ) ? $page + 1 : null; // if we have more pages, set next page link to current page plus 1
+        $prevPage = $page - 1; // if we're not on homepage, we should always have a previous page
+}
+?>
+    <div class="w-section w-clearfix older-newer-posts">
+    <?php if ( $prevPage > 1 ) { /* regular previous page link */ ?>
+        <a href="/page/<?php echo $prevPage; ?>/" class="button older-button">Newer Posts</a>
+    <?php } else if ( $prevPage == 1 ) { /* we don't want a /page/1/ url, so just go back to homepage */ ?>
+        <a href="<?php echo get_home_url(); ?>" class="button older-button">Newer Posts</a>
+    <?php }
+    if ( isset( $nextPage ) ) { ?>
+        <a href="/page/<?php echo $nextPage; ?>/" class="button newer-button">More Posts</a>
+    <? } ?>
+    </div>
 </div>
 
 
