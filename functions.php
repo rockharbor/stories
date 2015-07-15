@@ -7,12 +7,17 @@ add_theme_support( 'automatic-feed-links' );
 
 // add custom class to tag link
 function add_class_the_tags($html){
-    $postid = get_the_ID();
     $html = str_replace('<a','<a class="tags"',$html);
     return $html;
 }
 add_filter('the_tags','add_class_the_tags');
 
+// add custom class to category link
+function add_class_the_categories( $html ) {
+    $html = str_replace( '<a', '<a class="categories"', $html );
+    return $html;
+}
+add_filter( 'the_category', 'add_class_the_categories' );
 
 //Post thumbnails support
 add_theme_support( 'post-thumbnails' );

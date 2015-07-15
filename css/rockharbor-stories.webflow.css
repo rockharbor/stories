@@ -202,6 +202,7 @@ a:focus {
 .date {
   display: block;
   margin-right: 10px;
+  margin-bottom: 10px;
   padding: 6px;
   float: left;
   border: 1px solid white;
@@ -239,6 +240,9 @@ a:focus {
 }
 .tags:hover {
   color: #fec015;
+}
+.categories {
+  padding-right: 10px;
 }
 .home-portrait {
   overflow-x: hidden;

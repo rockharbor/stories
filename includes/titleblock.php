@@ -58,9 +58,11 @@
     </div>
     <img class="icon" src="<?php bloginfo('template_directory'); ?>/images/clipboard.svg" width="24">
     <span class="category"><?php the_category(' '); ?></span>
-    <a class="w-inline-block header-link" href="<?php the_permalink(); ?>">
+	<div class="title-link">
+      <a class="w-inline-block header-link" href="<?php the_permalink(); ?>">
         <h2 class="titleblock-h2"><?php the_title(); ?></h2>
-    </a>
+      </a>
+	</div>
     <?php the_tags( '', ' ', ' ' ); ?>
 </div>
 
