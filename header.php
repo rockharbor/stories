@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <title>
-  	<?php bloginfo('name'); // show the blog name, from settings ?> | 
+  	<?php bloginfo('name'); // show the blog name, from settings ?> |
 	<?php is_front_page() ? bloginfo('description') : wp_title(''); // if we're on the home page, show the description, from the site's settings - otherwise, show the title of the post or page ?>
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +17,7 @@
   <!-- CAMPUS NAV -->
   <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/campusnav/campusnav.css">
   <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/style.css"> <!-- OVERRIDES -->
-  
+
   <!-- FONTS -->
   <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
@@ -27,13 +27,15 @@
         families: ["Montserrat:400,700"]
       }
     });
-  </script>  
+  </script>
   <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/modernizr.js"></script> <!-- RESET -->
 
   <!-- FAVICONS -->
-  <link rel="shortcut icon" type="image/x-icon" href="https://daks2k3a4ib2z.cloudfront.net/img/favicon.ico">
-  <link rel="apple-touch-icon" href="https://daks2k3a4ib2z.cloudfront.net/img/webclip.png">
-  
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="<?php bloginfo( 'template_directory' ); ?>/images/appicon-180.png">
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="<?php bloginfo( 'template_directory' ); ?>/images/appicon-152.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php bloginfo( 'template_directory' ); ?>/images/appicon-144.png">
+  <link rel="icon" type="image/x-icon" href="<?php bloginfo( 'template_directory' ); ?>/images/favicon.ico">
+
 </head>
 <body>
 
@@ -59,14 +61,14 @@
 											<?php if(get_sub_field('link', 'option')){ ?>
 												<a class="w-dropdown-link dropdownlink" href="<?php the_sub_field('link', 'option'); ?>"><?php the_sub_field('title', 'option'); ?></a>
 											<?php } else { ?>
-										  		<?php 
+										  		<?php
 												$term = get_sub_field('category', 'option');
 												if( $term ): ?>
 														<a class="w-dropdown-link dropdownlink" href="<?php echo get_term_link( $term ); ?>"><?php echo $term->name; ?></a>
 												<?php endif; ?>
 										  	<?php } ?>
 										<?php endwhile; ?>
-							            
+
 							        </nav>
 								<?php endif; ?>
 							</div>
@@ -77,9 +79,8 @@
         <div class="w-nav-button">
           <div class="w-icon-nav-menu"></div>
         </div>
-		
+
       </div>
     </div>
 </div>
 <?php include (TEMPLATEPATH . '/campusnav/campusnav_slideouts.php' ); //CAMPUS SLIDE OUT PLACEMENT ?>
-  
