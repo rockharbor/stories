@@ -726,6 +726,9 @@ html.w-mod-js *[data-ix="mouse-over-title-origin"] {
     margin-top: 10px;
     margin-bottom: 10px;
   }
+  .older-newer-posts .button {
+    margin: 0px;
+  }
   .navbar {
     padding-right: 10px;
     padding-left: 10px;
@@ -736,7 +739,7 @@ html.w-mod-js *[data-ix="mouse-over-title-origin"] {
     padding-left: 20px;
     background-size: auto, cover;
   }
-  .home-portrait.archive-poat {
+  .home-portrait.archive-post {
     width: 100%;
   }
   .footer {
