@@ -17,10 +17,6 @@
   <?php the_field('google_analytics', 'option'); ?>
   <?php endif; ?>
 
-  <!-- Facebook Image Meta -->
-  <?php $image_id = get_post_thumbnail_id(); $image_url = wp_get_attachment_image_src($image_id,'single-post-thumbnail', false);  ?>
-  <meta property="og:image" content="<?php echo $image_url[0]; ?>" />
-  
   <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/normalize.css"> <!-- RESET -->
   <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/webflow.css"> <!-- WEBFLOW RESET -->
   <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/rockharbor-stories.webflow.css"> <!-- THEME -->
@@ -57,7 +53,7 @@
 
 
     <!-- CAMPUS NAV MENU -->
-  <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/campusnav/jquery.sidr.min.js"></script> 
+  <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/campusnav/jquery.sidr.min.js"></script>
   <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/campusnav/campusnav.js"></script>
   <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/modernizr.js"></script> <!-- RESET -->
   <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/ajax-frontpage.js"></script> <!-- Load more posts using ajax -->
@@ -67,6 +63,46 @@
   <link rel="apple-touch-icon-precomposed" sizes="152x152" href="<?php bloginfo( 'template_directory' ); ?>/images/appicon-152.png">
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php bloginfo( 'template_directory' ); ?>/images/appicon-144.png">
   <link rel="icon" type="image/x-icon" href="<?php bloginfo( 'template_directory' ); ?>/images/favicon.ico">
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="<?php bloginfo('name'); ?> | <?php is_front_page() ? bloginfo('description') : wp_title(''); ?>" />
+  <meta property="og:type" content="<?php
+  if ( is_single() ) {
+    if ( get_post_format() == 'video') {
+      echo "video.other";
+    } else {
+      echo "article";
+    }
+  } else {
+    echo "webpage";
+  }?>" />
+  <meta property="og:image" content="<?php
+  if ( is_single() ) {
+    $postThumbnailId = get_post_thumbnail_id();
+    if ( !is_null( $postThumbnailId ) ) {
+      echo wp_get_attachment_url( $postThumbnailId );
+    } else {
+      echo get_bloginfo( 'template_directory' ) . '/images/appicon-180.png';
+    }
+  } else {
+    echo get_bloginfo( 'template_directory' ) . '/images/appicon-180.png';
+  }?>" />
+  <meta property="og:url" content="<?php
+  if ( is_single() ) {
+    the_permalink();
+  } else {
+    echo get_site_url() . $_SERVER['REQUEST_URI'];
+  }?>" />
+  <meta property="og:description" content="<?php
+  if ( is_single() ) {
+      if ( have_posts() ) {
+          the_post();
+          echo wp_kses( get_the_excerpt(), array() );
+          rewind_posts();
+      }
+  } else {
+      echo get_bloginfo( 'description' );
+  }?>" />
 
 </head>
 <body>
