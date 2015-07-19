@@ -167,7 +167,7 @@ $postsRemaining = $my_query->post_count; ?>
 </div>
 
 
-<div class="w-row">
+<div class="w-row last-row">
 
 <!-- 	display post 13 -->
 	<?php if ( $postsRemaining > 0 ) {
@@ -201,18 +201,16 @@ switch ( $page ) {
         $prevPage = $page - 1; // if we're not on homepage, we should always have a previous page
 }
 ?>
-    <div class="w-section w-clearfix older-newer-posts">
-    <?php if ( $prevPage > 1 ) { /* regular previous page link */ ?>
-        <a href="/page/<?php echo $prevPage; ?>/" class="button older-button">Newer Posts</a>
-    <?php } else if ( $prevPage == 1 ) { /* we don't want a /page/1/ url, so just go back to homepage */ ?>
-        <a href="<?php echo get_home_url(); ?>" class="button older-button">Newer Posts</a>
-    <?php }
-    if ( isset( $nextPage ) ) { ?>
-        <a href="/page/<?php echo $nextPage; ?>/" class="button newer-button">More Posts</a>
-    <?php } ?>
-    </div>
+<div class="w-section w-clearfix older-newer-posts">
+<?php if ( $prevPage > 1 ) { /* regular previous page link */ ?>
+    <a href="/page/<?php echo $prevPage; ?>/" class="button older-button" data-prev-page="<?php echo $prevPage; ?>">Newer Posts</a>
+<?php } else if ( $prevPage == 1 ) { /* we don't want a /page/1/ url, so just go back to homepage */ ?>
+    <a href="<?php echo get_home_url(); ?>" class="button older-button">Newer Posts</a>
+<?php }
+if ( isset( $nextPage ) ) { ?>
+    <a href="/page/<?php echo $nextPage; ?>/" class="button newer-button" data-next-page="<?php echo $nextPage; ?>">More Posts</a>
+<?php } ?>
 </div>
-
 
 <?php if(get_field('mission_statement', 'option')): ?>
 
@@ -224,4 +222,4 @@ switch ( $page ) {
 
 
 
-<?php get_footer(); // This fxn gets the footer.php file and renders it ?>
+<?php get_footer(); // This fxn gets the footer.php file and renders it

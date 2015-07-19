@@ -109,3 +109,8 @@ add_filter('upload_mimes', 'cc_mime_types');
 // Add CSS Styles to Visual Editor so user can see output while editing.
     add_editor_style('/css/rockharbor-stories.webflow.css');
     add_editor_style('/style.css');
+
+// Add AJAX handler for retrieving additional posts
+require_once INCLUDES . DS . 'ajax-frontpage.php';
+add_action( 'wp_ajax_nopriv_fetch_posts', 'ajaxFetchPosts' );
+add_action( 'wp_ajax_fetch_posts', 'ajaxFetchPosts' );

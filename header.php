@@ -38,7 +38,29 @@
       }
     });
   </script>
+
+  <!-- JQUERY -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  <!-- WEBFLOW FUNCTIONALITY -->
+  <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/webflow.js"></script>
+  <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+
+  <!--  FIT VID to make videos fit the width of their containers  -->
+  <script src="<?php bloginfo('template_directory'); ?>/js/jquery.fitvids.js"></script>
+  <script>
+    $(document).ready(function(){
+    // Target your .container, .wrapper, .post, etc.
+    $("article").fitVids();
+    });
+  </script>
+
+
+    <!-- CAMPUS NAV MENU -->
+  <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/campusnav/jquery.sidr.min.js"></script> 
+  <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/campusnav/campusnav.js"></script>
   <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/modernizr.js"></script> <!-- RESET -->
+  <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/ajax-frontpage.js"></script> <!-- Load more posts using ajax -->
 
   <!-- FAVICONS -->
   <link rel="apple-touch-icon-precomposed" sizes="180x180" href="<?php bloginfo( 'template_directory' ); ?>/images/appicon-180.png">
