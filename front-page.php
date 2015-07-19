@@ -30,10 +30,10 @@ if ( isset( $stickyPosts[0] ) && !( $page >= 2 ) ) { // If there is at least one
         $postFormat = get_post_format();
         switch ( $postFormat ) {
             case 'video':
-                $iconUrl = '/includes/video-outline.svg';
+                $iconUrl = '/images/video-outline.svg';
                 break;
             case 'audio':
-                $iconUrl = '/includes/microphone-outline.svg';
+                $iconUrl = '/images/microphone-outline.svg';
                 break;
             default:
                 $iconUrl = '/images/clipboard.svg';
@@ -225,10 +225,3 @@ switch ( $page ) {
 
 
 <?php get_footer(); // This fxn gets the footer.php file and renders it ?>
-
-
-
-
-
-
-
