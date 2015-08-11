@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
 <!-- Last Published: Tue Jun 02 2015 21:03:32 GMT+0000 (UTC) -->
-<html data-wf-site="55550013bb87e1146ef89e94" data-wf-page="55550013bb87e1146ef89e95">
+<html data-wf-site="55550013bb87e1146ef89e94" data-wf-page="55550013bb87e1146ef89e95" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
 <head>
   <meta charset="utf-8">
   <title>
@@ -11,6 +11,11 @@
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="Webflow">
+  
+  <!-- Facebook Image Meta -->
+  <?php $image_id = get_post_thumbnail_id(); $image_url = wp_get_attachment_image_src($image_id,'single-post-thumbnail', false);  ?>
+  <meta property="og:image" content="<?php echo $image_url[0]; ?>" />
+  
   <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/normalize.css"> <!-- RESET -->
   <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/webflow.css"> <!-- WEBFLOW RESET -->
   <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/rockharbor-stories.webflow.css"> <!-- THEME -->
