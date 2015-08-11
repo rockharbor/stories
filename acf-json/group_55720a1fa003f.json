@@ -2,7 +2,89 @@
   "key":"group_55720a1fa003f",
   "title":"Other Options",
   "fields":[
-    
+    {
+      "key":"field_55720a414952d",
+      "label":"Mission Statement",
+      "name":"mission_statement",
+      "type":"textarea",
+      "instructions":"",
+      "required":1,
+      "conditional_logic":0,
+      "wrapper":{
+        "width":"",
+        "class":"",
+        "id":""
+      },
+      "default_value":"",
+      "placeholder":"",
+      "maxlength":"",
+      "rows":"",
+      "new_lines":"",
+      "readonly":0,
+      "disabled":0
+    },
+    {
+      "key":"field_55c8d8d0e945c",
+      "label":"Adjacent post excluded taxonomies",
+      "name":"adjacent_post_excluded_taxonomies",
+      "type":"repeater",
+      "instructions":"Taxonomies to exclude for Prev\/Next post links. Intended to be used to exclude non-viewable post formats like quote (post-format-quote).",
+      "required":0,
+      "conditional_logic":0,
+      "wrapper":{
+        "width":"",
+        "class":"",
+        "id":""
+      },
+      "min":"",
+      "max":"",
+      "layout":"table",
+      "button_label":"Add Row",
+      "sub_fields":[
+        {
+          "key":"field_55c8d9ece945d",
+          "label":"Name",
+          "name":"name",
+          "type":"text",
+          "instructions":"Human-readable friendly name for Taxonomy",
+          "required":0,
+          "conditional_logic":0,
+          "wrapper":{
+            "width":"",
+            "class":"",
+            "id":""
+          },
+          "default_value":"",
+          "placeholder":"",
+          "prepend":"",
+          "append":"",
+          "maxlength":"",
+          "readonly":0,
+          "disabled":0
+        },
+        {
+          "key":"field_55c8da04e945e",
+          "label":"Slug",
+          "name":"slug",
+          "type":"text",
+          "instructions":"The slug for the Taxonomy you want to exclude (e.g. post-format-quote)",
+          "required":1,
+          "conditional_logic":0,
+          "wrapper":{
+            "width":"",
+            "class":"",
+            "id":""
+          },
+          "default_value":"",
+          "placeholder":"",
+          "prepend":"",
+          "append":"",
+          "maxlength":"",
+          "readonly":0,
+          "disabled":0
+        }
+      ]
+    }
   ],
   "location":[
     [
@@ -19,5 +101,5 @@
   "label_placement":"top",
   "instruction_placement":"label",
   "hide_on_screen":"",
-  "modified":1436370327
+  "modified":1439226428
 }
