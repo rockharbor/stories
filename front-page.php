@@ -209,7 +209,7 @@ switch ( $page ) {
     <?php }
     if ( isset( $nextPage ) ) { ?>
         <a href="/page/<?php echo $nextPage; ?>/" class="button newer-button">More Posts</a>
-    <? } ?>
+    <?php } ?>
     </div>
 </div>
 
