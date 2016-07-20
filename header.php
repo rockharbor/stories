@@ -11,11 +11,16 @@
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="Webflow">
+  <?php if (get_field('google_analytics', 'option')): ?>
+
+  <!-- Google Analytics -->
+  <?php the_field('google_analytics', 'option'); ?>
+  <?php endif; ?>
 
   <!-- Facebook Image Meta -->
   <?php $image_id = get_post_thumbnail_id(); $image_url = wp_get_attachment_image_src($image_id,'single-post-thumbnail', false);  ?>
   <meta property="og:image" content="<?php echo $image_url[0]; ?>" />
-
+  
   <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/normalize.css"> <!-- RESET -->
   <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/webflow.css"> <!-- WEBFLOW RESET -->
   <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/rockharbor-stories.webflow.css"> <!-- THEME -->
