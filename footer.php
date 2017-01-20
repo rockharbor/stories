@@ -17,7 +17,7 @@
 	      </div>
 	    </div>
 	    <div class="w-container"><img class="footerlogo" src="<?php bloginfo('template_directory'); ?>/images/footer-logo.png">
-	      	<p class="copyright">© 2015 ROCKHARBOR</p>
+	      	<p class="copyright">&copy; <?php echo date('Y'); ?> ROCKHARBOR</p>
 	    </div>
 	</div>
 
