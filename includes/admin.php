@@ -190,7 +190,7 @@ function render_option_field($args) {
  * @return string Partial path
  */
 	function getS3Path($fullPath = '') {
-        $blogInfo = get_blog_details( get_current_blog_id() );
+        $blogInfo = get_site( get_current_blog_id() );
 
         $uploadpaths = wp_upload_dir();
 

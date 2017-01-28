@@ -43,7 +43,7 @@ function posts_link_attributes_2() {
 add_filter( 'wp_get_attachment_url', 's3Url' );
 
 function s3Url($url) {
-	$blogInfo = get_blog_details( get_current_blog_id() );
+	$blogInfo = get_site( get_current_blog_id() );
 
 	$subsitePath = 'wp-content/uploads';
 	list($sub, $domain, $tld) = explode('.', $blogInfo->domain);
