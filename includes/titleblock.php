@@ -1,6 +1,6 @@
 <?php if ( has_post_format( 'video' )) { ?>
 
-	<div class="w-clearfix titleblock" <?php if ( is_single() ) { ?><?php	} else { ?>data-ix="mouse-over-title-origin"<?php } ?>>
+	<div class="w-clearfix titleblock" >
 
     <div class="date">
       <div class="month"><?php the_time('M'); ?></div>
@@ -17,7 +17,7 @@
 
 <?php } elseif ( has_post_format( 'audio' )) { ?>
 
-<div class="w-clearfix titleblock" <?php if ( is_single() ) { ?><?php	} else { ?>data-ix="mouse-over-title-origin"<?php } ?>>
+<div class="w-clearfix titleblock" >
     <div class="date">
       <div class="month"><?php the_time('M'); ?></div>
       <div class="day"><?php the_time('d'); ?></div>
@@ -50,7 +50,7 @@
 
 <?php } else { ?>
 
-<div class="w-clearfix titleblock" <?php if ( is_single() ) { ?><?php	} else { ?>data-ix="mouse-over-title-origin"<?php } ?>>
+<div class="w-clearfix titleblock" >
     <div class="date">
       <div class="month"><?php the_time('M'); ?></div>
       <div class="day"><?php the_time('d'); ?></div>

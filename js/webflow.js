@@ -3993,10 +3993,21 @@ module.exports=function($){if($.support.cors||!$.ajaxTransport||!window.XDomainR
  */
 Webflow.require('ix').init([
   {"slug":"slide-away-menu","name":"Slide Away Menu","value":{"style":{},"triggers":[{"type":"hover","loopA":true,"stepsA":[{"opacity":1,"transition":"transform 200ms ease 0ms, opacity 500ms ease 0ms","x":"0px","y":"-50px"}],"stepsB":[]}]}},
-  {"slug":"mouse-over-titles","name":"Mouse Over Titles","value":{"style":{},"triggers":[{"type":"hover","selector":".titleblock","descend":true,"stepsA":[{"transition":"transform 300ms ease 0ms","x":"0px","y":"0px"}],"stepsB":[{"transition":"transform 450ms ease 0ms","x":"0px","y":"150px"}]}]}},
+  //{"slug":"mouse-over-titles","name":"Mouse Over Titles","value":{"style":{},"triggers":[{"type":"hover","selector":".titleblock","descend":true,"stepsA":[{"transition":"transform 300ms ease 0ms","x":"0px","y":"0px"}],"stepsB":[{"transition":"transform 450ms ease 0ms","x":"0px","y":"150px"}]}]}},
   {"slug":"mouse-over-title-origin","name":"Mouse Over Title Origin","value":{"style":{"x":"0px","y":"200px"},"triggers":[]}},
   {"slug":"scroll-hides-nav","name":"Scroll Hides Nav","value":{"style":{},"triggers":[{"type":"scroll","selector":".navigation","loopA":true,"loopB":true,"offsetTop":"55%","offsetBot":"5%","stepsA":[{"transition":"transform 500ms ease 0ms","x":"0px","y":"0px"}],"stepsB":[{"transition":"transform 500ms ease 0ms","x":"0px","y":"-100px"}]},{"type":"scroll","selector":".rhstories","stepsA":[{"opacity":0.5,"transition":"opacity 500ms ease 0ms"}],"stepsB":[{"opacity":0,"transition":"opacity 500ms ease 0ms"}]}]}},
   {"slug":"footer-hides-nav","name":"Footer Hides Nav","value":{"style":{},"triggers":[{"type":"scroll","selector":".navigation","loopA":true,"offsetBot":"1%","stepsA":[{"transition":"transform 500ms ease 0ms","x":"0px","y":"-108px"}],"stepsB":[]}]}},
   {"slug":"hide-campus-nav","name":"Hide Campus Nav","value":{"style":{},"triggers":[{"type":"hover","stepsA":[{"height":"auto","transition":"height 500ms ease 0ms"}],"stepsB":[{"wait":4000},{"height":"10px","transition":"height 1500ms ease 0ms"}]}]}},
   {"slug":"show-header-search-box","name":"Show Header Search Box","value":{"style":{},"triggers":[{"type":"click","selector":".headersearch","stepsA":[{"display":"block"},{"opacity":1,"transition":"opacity 500ms ease 0ms"}],"stepsB":[{"opacity":0,"transition":"opacity 500ms ease 0ms"},{"display":"none"}]}]}}
 ]);
+
+$(document).ready(function() {
+    $('.w-col,.w-section.header').each(function() {
+        $(this).click(function() {
+            var div = $(this);
+            if (div.data('post-format') !== 'quote') {
+                window.location = div.data('article-url');
+            }
+        })
+    })
+});
