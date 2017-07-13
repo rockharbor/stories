@@ -104,6 +104,8 @@
       echo get_bloginfo( 'description' );
   }?>" />
 
+  <link type="application/opensearchdescription+xml" rel="search" href="<?php echo get_bloginfo( 'template_directory' ) . '/opensearch.php'; ?>" />
+
 </head>
 <body>
 
