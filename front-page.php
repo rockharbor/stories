@@ -201,6 +201,7 @@ switch ( $page ) {
         $prevPage = $page - 1; // if we're not on homepage, we should always have a previous page
 }
 ?>
+</div>
 <div class="w-section w-clearfix older-newer-posts">
 <?php if ( $prevPage > 1 ) { /* regular previous page link */ ?>
     <a href="/page/<?php echo $prevPage; ?>/" class="button older-button" data-prev-page="<?php echo $prevPage; ?>">Newer Posts</a>

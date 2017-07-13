@@ -46,7 +46,6 @@
 
 
 <?php
-}
 
 wp_footer();
 
