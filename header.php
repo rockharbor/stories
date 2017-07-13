@@ -74,7 +74,7 @@
       echo "article";
     }
   } else {
-    echo "webpage";
+    echo "website";
   }?>" />
   <meta property="og:image" content="<?php
   if ( is_single() ) {
