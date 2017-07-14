@@ -38,7 +38,7 @@ if ( isset( $stickyPosts[0] ) && !( $page >= 2 ) ) { // If there is at least one
             default:
                 $iconUrl = '/images/clipboard.svg';
         } ?>
-<div class="w-section header" style="<?php include ( TEMPLATEPATH . '/includes/background.php' ); ?>" data-article-url="<?php the_permalink(); ?>">
+<div class="w-section header linkable-article" style="<?php include ( TEMPLATEPATH . '/includes/background.php' ); ?>" data-article-url="<?php the_permalink(); ?>">
     <div class="w-container hero">
         <img class="icon" src="<?php echo get_bloginfo( 'template_directory' ) . $iconUrl; ?>" width="24">
         <span class="category"><?php the_category( ' ' ); ?></span>
@@ -74,7 +74,7 @@ $postsRemaining = $my_query->post_count; ?>
 	<?php for ( $i = 0; ( $i < 3 ) && ( $postsRemaining > 0 ); $i++ ) {
         $my_query->the_post(); ?>
 
-	    <div class="w-col w-col-4 w-col-stack home-portrait" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-article-url="<?php the_permalink(); ?>" data-post-format="<?php echo get_post_format(); ?>">
+	    <div class="w-col w-col-4 w-col-stack home-portrait linkable-article" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-article-url="<?php the_permalink(); ?>" data-post-format="<?php echo get_post_format(); ?>">
 	        <?php include (TEMPLATEPATH . '/includes/titleblock.php' ); ?>
 	    </div>
 
@@ -86,7 +86,7 @@ $postsRemaining = $my_query->post_count; ?>
 	<?php if ( $postsRemaining > 0 ) {
         $my_query->the_post(); ?>
 
-	    <div class="w-col w-col-4 home-portrait" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-article-url="<?php the_permalink(); ?>" data-post-format="<?php echo get_post_format(); ?>">
+	    <div class="w-col w-col-4 home-portrait linkable-article" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-article-url="<?php the_permalink(); ?>" data-post-format="<?php echo get_post_format(); ?>">
 		   <?php include (TEMPLATEPATH . '/includes/titleblock.php' ); ?>
 	    </div>
 
@@ -97,7 +97,7 @@ $postsRemaining = $my_query->post_count; ?>
 	<?php if ( $postsRemaining > 0 ) {
         $my_query->the_post(); ?>
 
-	    <div class="w-col w-col-8 home-portrait" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-article-url="<?php the_permalink(); ?>" data-post-format="<?php echo get_post_format(); ?>">
+	    <div class="w-col w-col-8 home-portrait linkable-article" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-article-url="<?php the_permalink(); ?>" data-post-format="<?php echo get_post_format(); ?>">
 	      <?php include (TEMPLATEPATH . '/includes/titleblock.php' ); ?>
 	    </div>
 
@@ -110,7 +110,7 @@ $postsRemaining = $my_query->post_count; ?>
 	<?php for ( $i = 0; ( $i < 3 ) && ( $postsRemaining > 0 ); $i++ ) {
         $my_query->the_post(); ?>
 
-	    <div class="w-col w-col-4 w-col-stack home-portrait" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-article-url="<?php the_permalink(); ?>" data-post-format="<?php echo get_post_format(); ?>">
+	    <div class="w-col w-col-4 w-col-stack home-portrait linkable-article" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-article-url="<?php the_permalink(); ?>" data-post-format="<?php echo get_post_format(); ?>">
 	      <?php include (TEMPLATEPATH . '/includes/titleblock.php' ); ?>
 	    </div>
 
@@ -123,7 +123,7 @@ $postsRemaining = $my_query->post_count; ?>
 	<?php if ( $postsRemaining > 0 ) {
         $my_query->the_post(); ?>
 
-	    <div class="w-col w-col-8 home-portrait" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-article-url="<?php the_permalink(); ?>" data-post-format="<?php echo get_post_format(); ?>">
+	    <div class="w-col w-col-8 home-portrait linkable-article" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-article-url="<?php the_permalink(); ?>" data-post-format="<?php echo get_post_format(); ?>">
 	      <?php include (TEMPLATEPATH . '/includes/titleblock.php' ); ?>
 	    </div>
 
@@ -134,7 +134,7 @@ $postsRemaining = $my_query->post_count; ?>
 	<?php if ( $postsRemaining > 0) {
         $my_query->the_post(); ?>
 
-	    <div class="w-col w-col-4 home-portrait" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-article-url="<?php the_permalink(); ?>" data-post-format="<?php echo get_post_format(); ?>">
+	    <div class="w-col w-col-4 home-portrait linkable-article" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-article-url="<?php the_permalink(); ?>" data-post-format="<?php echo get_post_format(); ?>">
 	      <?php include (TEMPLATEPATH . '/includes/titleblock.php' ); ?>
 	    </div>
 
@@ -147,7 +147,7 @@ $postsRemaining = $my_query->post_count; ?>
 	<?php if ( $postsRemaining > 0 ) {
         $my_query->the_post(); ?>
 
-	    <div class="w-col w-col-4 home-portrait" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-article-url="<?php the_permalink(); ?>" data-post-format="<?php echo get_post_format(); ?>">
+	    <div class="w-col w-col-4 home-portrait linkable-article" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-article-url="<?php the_permalink(); ?>" data-post-format="<?php echo get_post_format(); ?>">
 	      <?php include (TEMPLATEPATH . '/includes/titleblock.php' ); ?>
 	    </div>
 
@@ -158,7 +158,7 @@ $postsRemaining = $my_query->post_count; ?>
 	<?php if ( $postsRemaining > 0 ) {
         $my_query->the_post(); ?>
 
-	    <div class="w-col w-col-8 home-portrait" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-article-url="<?php the_permalink(); ?>" data-post-format="<?php echo get_post_format(); ?>">
+	    <div class="w-col w-col-8 home-portrait linkable-article" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-article-url="<?php the_permalink(); ?>" data-post-format="<?php echo get_post_format(); ?>">
 	        <?php include (TEMPLATEPATH . '/includes/titleblock.php' ); ?>
 	    </div>
 
@@ -173,7 +173,7 @@ $postsRemaining = $my_query->post_count; ?>
 	<?php if ( $postsRemaining > 0 ) {
         $my_query->the_post(); ?>
 
-	    <div class="w-col w-col-8 home-portrait" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-article-url="<?php the_permalink(); ?>" data-post-format="<?php echo get_post_format(); ?>">
+	    <div class="w-col w-col-8 home-portrait linkable-article" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-article-url="<?php the_permalink(); ?>" data-post-format="<?php echo get_post_format(); ?>">
 	      <?php include (TEMPLATEPATH . '/includes/titleblock.php' ); ?>
 	    </div>
 
@@ -185,7 +185,7 @@ $postsRemaining = $my_query->post_count; ?>
 	<?php if ( $postsRemaining > 0 ) {
         $my_query->the_post(); ?>
 
-	    <div class="w-col w-col-4 home-portrait" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-article-url="<?php the_permalink(); ?>" data-post-format="<?php echo get_post_format(); ?>">
+	    <div class="w-col w-col-4 home-portrait linkable-article" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-article-url="<?php the_permalink(); ?>" data-post-format="<?php echo get_post_format(); ?>">
 	      <?php include (TEMPLATEPATH . '/includes/titleblock.php' ); ?>
 	    </div>
 

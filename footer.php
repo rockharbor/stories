@@ -21,31 +21,7 @@
 	    </div>
 	</div>
 
-<?php } ?>
-
-  <!-- JQUERY -->
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-  <!-- WEBFLOW FUNCTIONALITY -->
-  <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/webflow.js"></script>
-  <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
-
-  <!--  FIT VID to make videos fit the width of their containers  -->
-  <script src="<?php bloginfo('template_directory'); ?>/js/jquery.fitvids.js"></script>
-	<script>
-	  $(document).ready(function(){
-	    // Target your .container, .wrapper, .post, etc.
-	    $("article").fitVids();
-	  });
-	</script>
-
-
-	<!-- CAMPUS NAV MENU -->
-	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/campusnav/jquery.sidr.min.js"></script>
-	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/campusnav/campusnav.js"></script>
-
-
-<?php
+<?php } 
 
 wp_footer();
 

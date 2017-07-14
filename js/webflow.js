@@ -3999,13 +3999,17 @@ Webflow.require('ix').init([
   {"slug":"show-header-search-box","name":"Show Header Search Box","value":{"style":{},"triggers":[{"type":"click","selector":".headersearch","stepsA":[{"display":"block"},{"opacity":1,"transition":"opacity 500ms ease 0ms"}],"stepsB":[{"opacity":0,"transition":"opacity 500ms ease 0ms"},{"display":"none"}]}]}}
 ]);
 
-$(document).ready(function() {
-    $('.w-col,.w-section.header').each(function() {
+function attachLinkHandlers() {
+    $('.linkable-article').each(function() {
         $(this).click(function() {
             var div = $(this);
             if (div.data('post-format') !== 'quote') {
                 window.location = div.data('article-url');
             }
         })
-    })
+    });
+}
+
+$(document).ready(function() {
+    attachLinkHandlers();
 });

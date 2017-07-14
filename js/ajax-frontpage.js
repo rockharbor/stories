@@ -1,7 +1,6 @@
 $(document).ready(function() {
 
     $('.newer-button').on('click', function(event) {
-        console.log(event);
         event.preventDefault();
         nextPage = $(this).data('next-page');
 
@@ -18,6 +17,7 @@ $(document).ready(function() {
     function renderPosts(data) {
         insertTarget = $('body').children('.last-row').last();
         insertTarget.after(data);
+        attachLinkHandlers();
     }
 
     function updateButton() {

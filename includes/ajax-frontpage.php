@@ -25,7 +25,7 @@ function ajaxFetchPosts() {
     	<?php for ( $i = 0; ( $i < 3 ) && ( $postsRemaining > 0 ); $i++ ) {
             $my_query->the_post(); ?>
 
-    	    <div class="w-col w-col-4 w-col-stack home-portrait" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" >
+    	    <div class="w-col w-col-4 w-col-stack home-portrait linkable-article" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-article-url="<?php the_permalink(); ?>" data-post-format="<?php echo get_post_format(); ?>">
     	        <?php include (TEMPLATEPATH . '/includes/titleblock.php' ); ?>
     	    </div>
 
@@ -37,7 +37,7 @@ function ajaxFetchPosts() {
     	<?php if ( $postsRemaining > 0 ) {
             $my_query->the_post(); ?>
 
-    	    <div class="w-col w-col-4 home-portrait" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" >
+    	    <div class="w-col w-col-4 home-portrait linkable-article" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-article-url="<?php the_permalink(); ?>" data-post-format="<?php echo get_post_format(); ?>">
     		   <?php include (TEMPLATEPATH . '/includes/titleblock.php' ); ?>
     	    </div>
 
@@ -48,7 +48,7 @@ function ajaxFetchPosts() {
     	<?php if ( $postsRemaining > 0 ) {
             $my_query->the_post(); ?>
 
-    	    <div class="w-col w-col-8 home-portrait" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" >
+    	    <div class="w-col w-col-8 home-portrait linkable-article" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-article-url="<?php the_permalink(); ?>" data-post-format="<?php echo get_post_format(); ?>">
     	      <?php include (TEMPLATEPATH . '/includes/titleblock.php' ); ?>
     	    </div>
 
@@ -61,7 +61,7 @@ function ajaxFetchPosts() {
     	<?php for ( $i = 0; ( $i < 3 ) && ( $postsRemaining > 0 ); $i++ ) {
             $my_query->the_post(); ?>
 
-    	    <div class="w-col w-col-4 w-col-stack home-portrait" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" >
+    	    <div class="w-col w-col-4 w-col-stack home-portrait linkable-article" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-article-url="<?php the_permalink(); ?>" data-post-format="<?php echo get_post_format(); ?>">
     	      <?php include (TEMPLATEPATH . '/includes/titleblock.php' ); ?>
     	    </div>
 
@@ -74,7 +74,7 @@ function ajaxFetchPosts() {
     	<?php if ( $postsRemaining > 0 ) {
             $my_query->the_post(); ?>
 
-    	    <div class="w-col w-col-8 home-portrait" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" >
+    	    <div class="w-col w-col-8 home-portrait linkable-article" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-article-url="<?php the_permalink(); ?>" data-post-format="<?php echo get_post_format(); ?>">
     	      <?php include (TEMPLATEPATH . '/includes/titleblock.php' ); ?>
     	    </div>
 
@@ -85,7 +85,7 @@ function ajaxFetchPosts() {
     	<?php if ( $postsRemaining > 0) {
             $my_query->the_post(); ?>
 
-    	    <div class="w-col w-col-4 home-portrait" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" >
+    	    <div class="w-col w-col-4 home-portrait linkable-article" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-article-url="<?php the_permalink(); ?>" data-post-format="<?php echo get_post_format(); ?>">
     	      <?php include (TEMPLATEPATH . '/includes/titleblock.php' ); ?>
     	    </div>
 
@@ -98,7 +98,7 @@ function ajaxFetchPosts() {
     	<?php if ( $postsRemaining > 0 ) {
             $my_query->the_post(); ?>
 
-    	    <div class="w-col w-col-4 home-portrait" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" >
+    	    <div class="w-col w-col-4 home-portrait linkable-article" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-article-url="<?php the_permalink(); ?>" data-post-format="<?php echo get_post_format(); ?>">
     	      <?php include (TEMPLATEPATH . '/includes/titleblock.php' ); ?>
     	    </div>
 
@@ -109,7 +109,7 @@ function ajaxFetchPosts() {
     	<?php if ( $postsRemaining > 0 ) {
             $my_query->the_post(); ?>
 
-    	    <div class="w-col w-col-8 home-portrait" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" >
+    	    <div class="w-col w-col-8 home-portrait linkable-article" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-article-url="<?php the_permalink(); ?>" data-post-format="<?php echo get_post_format(); ?>">
     	        <?php include (TEMPLATEPATH . '/includes/titleblock.php' ); ?>
     	    </div>
 
@@ -124,7 +124,7 @@ function ajaxFetchPosts() {
     	<?php if ( $postsRemaining > 0 ) {
             $my_query->the_post(); ?>
 
-    	    <div class="w-col w-col-8 home-portrait" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" >
+    	    <div class="w-col w-col-8 home-portrait linkable-article" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-article-url="<?php the_permalink(); ?>" data-post-format="<?php echo get_post_format(); ?>">
     	      <?php include (TEMPLATEPATH . '/includes/titleblock.php' ); ?>
     	    </div>
 
@@ -136,7 +136,7 @@ function ajaxFetchPosts() {
     	<?php if ( $postsRemaining > 0 ) {
             $my_query->the_post(); ?>
 
-    	    <div class="w-col w-col-4 home-portrait" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" >
+    	    <div class="w-col w-col-4 home-portrait linkable-article" style="<?php include (TEMPLATEPATH . '/includes/background.php' ); ?>" data-article-url="<?php the_permalink(); ?>" data-post-format="<?php echo get_post_format(); ?>">
     	      <?php include (TEMPLATEPATH . '/includes/titleblock.php' ); ?>
     	    </div>
 
