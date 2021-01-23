@@ -64,6 +64,9 @@ p {
   line-height: 23px;
   font-weight: 400;
 }
+em {
+	font-weight: 100;
+}
 a {
   position: relative;
   color: #ffab2e;
